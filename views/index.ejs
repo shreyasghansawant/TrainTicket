@@ -1,0 +1,114 @@
+<!-- FILEPATH: /C:/Users/shrey/OneDrive/Desktop/nodeIt/views/train-booking.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Train Ticket Booking</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+
+            .container {
+                margin: 0 auto;
+                max-width: 800px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            select {
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                border: none;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+
+            input[type="submit"] {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover #tickets {
+                background-color: #3e8e41;
+            }
+
+            #tickets {
+                display: block;
+                background-color: blueviolet;
+                color: #fff;
+                margin: auto;
+                text-align: center;
+                padding: 10px;
+                border: 1px solid palevioletred;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Train Ticket Booking</h1>
+            <form action='/search' method="POST" id="booking-form">
+                <label for="from">From:</label>
+                <select id="from" name="from" required>
+                    <option value="">Select departure city</option>
+                    <% stations.forEach((stn) => { %>
+                        <option value="<%= stn.station_name %>" ><%= stn.station_name %></option>
+                    <% }) %>
+                </select>
+
+                <label for="to">To:</label>
+                <select id="to" name="to" required>
+                    <option value="">Select arrival city</option>
+                    <% stations.forEach((stn) => { %>
+                        <option value="<%= stn.station_name %>" ><%= stn.station_name %></option>
+                    <% }) %>
+                </select>
+
+                <label for="class">Class:</label>
+                <select id="class" name="class" required>
+                    <option value="">Select class</option>
+                    <option value="economy">SL</option>
+                    <option value="business">3A</option>
+                    <option value="first">2A</option>
+                </select>
+
+                <input type="submit" value="Search">
+            </form>
+            <br/>
+            <br/>
+            <a href="/tickets" id="tickets">View All Tickets</a>
+        </div>
+
+        <script>
+            
+        </script>
+    </body>
+</html>

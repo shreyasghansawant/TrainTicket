@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .ticket {
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Train Ticket</h1>
+        <div class="ticket">
+            <h2>Passenger: <%= ticket.name %></h2>
+            <p>Train Number: [<%= train.train_number %>]</p>
+            <p>Train: <%= train.train_name %></p>
+            <p>Departure: <%= train.departure %></p>
+            <p>From: <%= train.station_name %></p>
+            <p>Date: <%= ticket.date %></p>
+            <p>Seats: <%= seats %></p>
+            <div class="info">
+                <p>Booking Date: <%= ticket.date %></p>
+                <p>Phone: <%= ticket.phone %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
